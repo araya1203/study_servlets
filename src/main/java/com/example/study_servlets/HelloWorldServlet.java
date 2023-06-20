@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletResponse;
+// import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,8 +17,8 @@ public class HelloWorldServlet extends HttpServlet {
        try {
        
         PrintWriter printWriter = response.getWriter();
-        String firstName = "Ara ";
-        String secondName = "ya";
+        // String firstName = "Ara ";
+        // String secondName = "ya";
 
         String contents = "<!DOCTYPE html>\r\n" + //
                  "       <html lang=\"en\">\r\n" + //
