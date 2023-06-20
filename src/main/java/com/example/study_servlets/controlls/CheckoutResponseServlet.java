@@ -38,23 +38,17 @@ public class CheckoutResponseServlet extends HttpServlet {
                     "    <form action=\"/CheckoutResponseServlet\" method=\"get\">\r\n" + //       
                     "    <div>Billing address</div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        First name "+firstName+"<input type=\"text\" name=\"first_name\">\r\n" + //
-                    "    </div>\r\n" + //
+                    "        First name "+firstName+" </div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        Last name "+LastName+"<input type=\"text\" name=\"last_name\">\r\n" + //
-                    "    </div>\r\n" + //
+                    "        Last name "+LastName+"</div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        Billing address "+Billingaddress+" <input type=\"text\" name=\"billing_address\">\r\n" + //
-                    "    </div>\r\n" + //
+                    "        Billing address "+Billingaddress+"</div> \r\n" + //
                     "    <div>\r\n" + //
-                    "        Email (Optional) "+Email+"<input type=\"text\" name=\"email\">\r\n" + //
-                    "    </div>\r\n" + //
+                    "        Email (Optional) "+Email+"</div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        Address "+Address+"<input type=\"text\" name=\"address\">\r\n" + //
-                    "    </div>\r\n" + //
+                    "        Address "+Address+"</div> \r\n" + //
                     "    <div>\r\n" + //
-                    "        Address 2 "+Address2+"(Optional) <input type=\"text\" name=\"address2\">\r\n" + //
-                    "    </div>\r\n" + //
+                    "        Address 2 "+Address2+"(Optional)</div>\r\n"  + //
                     "    <div>\r\n" + //
                     "        <label for=\"country\">Country</label>\r\n" + //
                     "        <select name=\"country\" id=\"country\">\r\n" + //
@@ -78,8 +72,7 @@ public class CheckoutResponseServlet extends HttpServlet {
                     "        </select>\r\n" + //
                     "    </div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        ZIP "+Zip+"<input type=\"text\" name=\"zip\" placeholder=\"12345\">\r\n" + //
-                    "    </div>\r\n" + //
+                    "        ZIP "+Zip+"</div>\r\n"+ //
                     "    <div class=\"form-check\">\r\n" + //
                     "        <input type=\"checkbox\" class=\"form-check-input\" id=\"same-address\">\r\n" + //
                     "        <label class=\"form-check-label\" for=\"same-address\">Shipping address is the same as my billing address</label>\r\n" + //
