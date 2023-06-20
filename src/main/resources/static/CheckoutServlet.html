@@ -12,18 +12,18 @@
 <body>
 
     <div class="container-fluid d-flex justify-content-center p-5">
-        
+
         <form action="">
-            <div class="text-center mt-5 mb-5">
+            <div class="text-center mt-5 mb-5 ">
                 Billing address
             </div>
             <div class="row col-12 m-2 ">
                 <div class="col-6 sm-6">
-                    <label for="first_name" class="form-label">First Name</label>
+                    <label for="first_name" class="form-label">First Name: </label>
                     <input type="text" name="first_name" id="">
                 </div>
                 <div class="col-6 sm-6">
-                    <label for="last_name" class="form-label">Last Name</label>
+                    <label for="last_name" class="form-label">Last Name: </label>
                     <input type="text" name="last_name" id="">
                 </div>
             </div>
@@ -44,30 +44,35 @@
                 Address 2(Optional)
                 <input type="text" name="" id="">
             </div>
-            <div class="row col-12">
-                <div class="container-fluid col-5"> Country
-                    <select class="form-select" name="Country" id="">
-                        <option value="korea">South Korea</option>
-                        <option value="china">China</option>
-                        <option value="japan">Japan</option>
-                        <option value="mongolia">Mongolia</option>
-                        <option value="vietnam">Vietnam</option>
-                    </select>
+            <div>
+                <div class="row col-12">
+                    <div class="container-fluid col-5"> Country
+                        <select class="form-select" name="Country" id="">
+                            <option value="korea">South Korea</option>
+                            <option value="china">China</option>
+                            <option value="japan">Japan</option>
+                            <option value="mongolia">Mongolia</option>
+                            <option value="vietnam">Vietnam</option>
+                        </select>
+                    </div>
+                    <div class="container-fluid col-4"> State
+                        <select class="form-select" name="Country" id="">
+                            <option value="a">A</option>
+                            <option value="b">B</option>
+                            <option value="c">C</option>
+                            <option value="d">D</option>
+                            <option value="e">E</option>
+                        </select>
+                    </div>
+                    <div class="row col-3"> Zip
+                        <input type="text" name="zip" id="">
+                    </div>
                 </div>
-                <div class="container-fluid col-4"> State
-                    <select class="form-select" name="Country" id="">
-                        <option value="a">A</option>
-                        <option value="b">B</option>
-                        <option value="c">C</option>
-                        <option value="d">D</option>
-                        <option value="e">E</option>
-                    </select>
+                <div class=>
+                    <button class="text-center mt-3" type="submit"> Submit</button>
                 </div>
-                <div class="col-3"> Zip
-                    <input type="text" name="zip" id="">
-                </div>
-            <button class="text-center mt-3" type="submit"> Submit</button>
             </div>
+
 
     </div>
     </form>
