@@ -26,7 +26,7 @@ public class CheckoutFormServlet extends HttpServlet {
                     "</head>\r\n" + //
                     "<body>\r\n" + //
                     "    <h3>Checkout form</h3>\r\n" + //
-                    "    <form action=\"/CheckoutFormServlet\" method=\"get\">\r\n" + //       
+                    "    <form action=\"/CheckoutResponseServlet\" method=\"get\">\r\n" + //       
                     "    <div>Billing address</div>\r\n" + //
                     "    <div>\r\n" + //
                     "        First name <input type=\"text\" name=\"first_name\">\r\n" + //
@@ -90,6 +90,7 @@ public class CheckoutFormServlet extends HttpServlet {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        
     }
 }
 

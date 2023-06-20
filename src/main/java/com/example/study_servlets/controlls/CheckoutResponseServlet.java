@@ -16,8 +16,16 @@ public class CheckoutResponseServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             PrintWriter printWriter = response.getWriter();
-            String firstname = "Ara";
-            String Lastname = "Jo";
+            String firstName = request.getParameter("first_name");
+            String LastName = request.getParameter("second_name");
+            String Billingaddress = request.getParameter("Billingaddress");
+            String Email = request.getParameter("Email");
+            String Address= request.getParameter("Address");
+            String Address2= request.getParameter("Address2");
+            String Zip= request.getParameter("Zip");
+            
+
+
             String contents = "<!DOCTYPE html>\r\n" + //
                     "<html lang=\"en\">\r\n" + //
                     "<head>\r\n" + //
@@ -30,22 +38,22 @@ public class CheckoutResponseServlet extends HttpServlet {
                     "    <form action=\"/CheckoutResponseServlet\" method=\"get\">\r\n" + //       
                     "    <div>Billing address</div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        First name <input type=\"text\" name=\"first_name\">\r\n" + //
+                    "        First name "+firstName+"<input type=\"text\" name=\"first_name\">\r\n" + //
                     "    </div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        Last name <input type=\"text\" name=\"last_name\">\r\n" + //
+                    "        Last name "+LastName+"<input type=\"text\" name=\"last_name\">\r\n" + //
                     "    </div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        Billing address <input type=\"text\" name=\"billing_address\">\r\n" + //
+                    "        Billing address "+Billingaddress+" <input type=\"text\" name=\"billing_address\">\r\n" + //
                     "    </div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        Email (Optional) <input type=\"text\" name=\"email\">\r\n" + //
+                    "        Email (Optional) "+Email+"<input type=\"text\" name=\"email\">\r\n" + //
                     "    </div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        Address <input type=\"text\" name=\"address\">\r\n" + //
+                    "        Address "+Address+"<input type=\"text\" name=\"address\">\r\n" + //
                     "    </div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        Address 2 (Optional) <input type=\"text\" name=\"address2\">\r\n" + //
+                    "        Address 2 "+Address2+"(Optional) <input type=\"text\" name=\"address2\">\r\n" + //
                     "    </div>\r\n" + //
                     "    <div>\r\n" + //
                     "        <label for=\"country\">Country</label>\r\n" + //
@@ -70,7 +78,7 @@ public class CheckoutResponseServlet extends HttpServlet {
                     "        </select>\r\n" + //
                     "    </div>\r\n" + //
                     "    <div>\r\n" + //
-                    "        ZIP <input type=\"text\" name=\"zip\" placeholder=\"12345\">\r\n" + //
+                    "        ZIP "+Zip+"<input type=\"text\" name=\"zip\" placeholder=\"12345\">\r\n" + //
                     "    </div>\r\n" + //
                     "    <div class=\"form-check\">\r\n" + //
                     "        <input type=\"checkbox\" class=\"form-check-input\" id=\"same-address\">\r\n" + //
@@ -91,7 +99,8 @@ public class CheckoutResponseServlet extends HttpServlet {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+          
+}
 }
 
 
