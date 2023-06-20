@@ -1,4 +1,4 @@
-package com.example.study_servlets.controls;
+package com.example.study_servlets.controlls;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/mynameRequestServlet")
-public class MynameRequestServlet extends HttpServlet{
+@WebServlet(urlPatterns = "/MynameRequestServlet")
+public class MynameRequestServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
-            
-            PrintWriter printwriter = response.getWriter();
+            PrintWriter printWriter = response.getWriter();
+
             String contents = "<!DOCTYPE html>\r\n" + //
                     "<html lang=\"en\">\r\n" + //
                     "\r\n" + //
@@ -26,26 +27,27 @@ public class MynameRequestServlet extends HttpServlet{
                     "</head>\r\n" + //
                     "\r\n" + //
                     "<body>\r\n" + //
-                    "    <div>Please write in your name</div>\r\n" + //
+                    "    <div>input your name</div>\r\n" + //
                     "    <form action=\"/getRequestParamsServlet\" method=\"get\">\r\n" + //
                     "        <div>\r\n" + //
-                    "            First name : <input type=\"text\" name=\"first_name\" id=\"\">\r\n" + //
+                    "            first name : <input type=\"text\" name=\"first_name\">\r\n" + //
                     "        </div>\r\n" + //
                     "        <div>\r\n" + //
-                    "            Last name : <input type=\"text\" name=\"last_name\" id=\"\">\r\n" + //
+                    "            second name : <input type=\"text\" name=\"second_name\">\r\n" + //
                     "        </div>\r\n" + //
-                    "        <button type=\"submit\"> Submit </button>\r\n" + //
+                    "        <div>\r\n" + //
+                    "            <button type=\"submit\"> \uBCF4\uB0B4\uAE30 </button>\r\n" + //
+                    "        </div>\r\n" + //
                     "    </form>\r\n" + //
                     "</body>\r\n" + //
                     "\r\n" + //
                     "</html>";
-            printwriter.println(contents);
-            printwriter.close();
+
+            printWriter.println(contents);
+            printWriter.close();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            // TODO: handle exception
         }
     }
-
 }
