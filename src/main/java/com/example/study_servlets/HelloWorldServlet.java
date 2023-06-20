@@ -17,8 +17,8 @@ public class HelloWorldServlet extends HttpServlet {
        try {
        
         PrintWriter printWriter = response.getWriter();
-        // String firstName = "Ara ";
-        // String secondName = "ya";
+        String firstName = "Ara ";
+        String secondName = "ya";
 
         String contents = "<!DOCTYPE html>\r\n" + //
                  "       <html lang=\"en\">\r\n" + //
@@ -28,8 +28,8 @@ public class HelloWorldServlet extends HttpServlet {
                  "    <title>Hello World</title>\r\n" + //
                  "</head>\r\n" + //
                  "<body>\r\n" + //
-                 "    <div> first Name : Ara </div>\r\n" + //
-                 "    <div> second Name : ya</div>\r\n" + //
+                 " <div> first Name : "+firstName+" </div>\r\n" + //
+                 " <div> second Name :"+secondName+"</div>\r\n" + //
                  "\r\n" + //
                  "</body>\r\n" + //
                  "</html>\r\n";

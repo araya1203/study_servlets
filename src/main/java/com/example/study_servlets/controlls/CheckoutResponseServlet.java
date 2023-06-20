@@ -16,6 +16,8 @@ public class CheckoutResponseServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             PrintWriter printWriter = response.getWriter();
+            String firstname = "Ara";
+            String Lastname = "Jo";
             String contents = "<!DOCTYPE html>\r\n" + //
                     "<html lang=\"en\">\r\n" + //
                     "<head>\r\n" + //
