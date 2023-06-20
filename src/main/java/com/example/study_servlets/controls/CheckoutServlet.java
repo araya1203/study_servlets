@@ -1,20 +1,31 @@
 package com.example.study_servlets.controls;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/CheckoutServlet")
-public class CheckoutServlet extends HttpServlet{
+public class CheckoutServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+
         try {
+
+            // String firstname = request.getParameter("first_name");
+            // String lastname = request.getParameter("last_name");
+            // String username = request.getParameter("Username");
+            // String email = request.getParameter("Email");
+            // String address = request.getParameter("Address");
+            // String addressOpt = request.getParameter("Address_Opt");
+            // String country = request.getParameter("Country");
+            // String state = request.getParameter("State");
+            // String zip = request.getParameter("zip");
+            
             PrintWriter printwriter = response.getWriter();
+
             String contents = "<!DOCTYPE html>\r\n" + //
                     "<html lang=\"en\">\r\n" + //
                     "\r\n" + //
@@ -30,17 +41,18 @@ public class CheckoutServlet extends HttpServlet{
                     "\r\n" + //
                     "    <div class=\"container-fluid d-flex justify-content-center p-5\">\r\n" + //
                     "\r\n" + //
-                    "        <form action=\"\">\r\n" + //
+                    "        <form action=\"/CheckoutServlet\">\r\n" + //
+                    "\r\n" + //
                     "            <div class=\"text-center mt-5 mb-5 \">\r\n" + //
                     "                Billing address\r\n" + //
                     "            </div>\r\n" + //
                     "            <div class=\"row col-12 m-2 \">\r\n" + //
                     "                <div class=\"col-6 sm-6\">\r\n" + //
-                    "                    <label for=\"first_name\" class=\"form-label\">First Name: </label>\r\n" + //
+                    "                    <label for=\"First_name\" class=\"form-label\">First Name: </label>\r\n" + //
                     "                    <input type=\"text\" name=\"first_name\" id=\"firstname\">\r\n" + //
                     "                </div>\r\n" + //
                     "                <div class=\"col-6 sm-6\">\r\n" + //
-                    "                    <label for=\"last_name\" class=\"form-label\">Last Name: </label>\r\n" + //
+                    "                    <label for=\"Last_name\" class=\"form-label\">Last Name: </label>\r\n" + //
                     "                    <input type=\"text\" name=\"last_name\" id=\"lastname\">\r\n" + //
                     "                </div>\r\n" + //
                     "            </div>\r\n" + //
@@ -96,8 +108,10 @@ public class CheckoutServlet extends HttpServlet{
                     "</body>\r\n" + //
                     "\r\n" + //
                     "</html>";
+
             printwriter.println(contents);
             printwriter.close();
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
             // TODO: handle exception
