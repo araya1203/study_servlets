@@ -15,8 +15,8 @@ public class GetRequestParamsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String firstName = request.getParameter("first_name");
-            String secondName = request.getParameter("second_name");
+            String firstName = "Ara ";
+            String secondName = "ya";
             PrintWriter printWriter = response.getWriter();
             // String contents = "";
             String contents = "<!DOCTYPE html>\r\n" + //
@@ -32,7 +32,6 @@ public class GetRequestParamsServlet extends HttpServlet {
                     "\r\n" + //
                     "</body>\r\n" + //
                     "</html>\r\n";
-
             printWriter.println(contents);
             printWriter.close();
 
