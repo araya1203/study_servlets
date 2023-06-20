@@ -32,7 +32,7 @@ public class MynameRequestServlet extends HttpServlet{
                     "            First name : <input type=\"text\" name=\"first_name\" id=\"\">\r\n" + //
                     "        </div>\r\n" + //
                     "        <div>\r\n" + //
-                    "            Last name : <input type=\"text\" name=\"last_name\" id=\"\">\r\n" + //
+                    "            Second name : <input type=\"text\" name=\"second_name\" id=\"\">\r\n" + //
                     "        </div>\r\n" + //
                     "        <button type=\"submit\"> Submit </button>\r\n" + //
                     "    </form>\r\n" + //
