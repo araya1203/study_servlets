@@ -18,11 +18,11 @@ public class CheckoutResponseServlet extends HttpServlet {
             PrintWriter printWriter = response.getWriter();
             String firstName = request.getParameter("first_name");
             String LastName = request.getParameter("second_name");
-            String Billingaddress = request.getParameter("Billingaddress");
-            String Email = request.getParameter("Email");
-            String Address= request.getParameter("Address");
-            String Address2= request.getParameter("Address2");
-            String Zip= request.getParameter("Zip");
+            String Billingaddress = request.getParameter("billing_address");
+            String Email = request.getParameter("email");
+            String Address= request.getParameter("address");
+            String Address2= request.getParameter("address2");
+            String Zip= request.getParameter("zip");
             
 
 
