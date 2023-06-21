@@ -1,42 +1,45 @@
 package com.example.study_servlets.controls.commons;
 
-import java.sql.Connection;
-
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.UUID;
+
+import org.springframework.boot.autoconfigure.amqp.RabbitProperties.Cache.Connection;
+
+import com.mysql.cj.xdevapi.Statement;
+
+//import java.util.UUID;
 
 public class Commons {
-    public String generateUUID() {
-        return UUID.randomUUID().toString();
-    }
+    // public String generateUUID() {
+    //     return UUID.randomUUID().toString();
+    // }   
 
-    public Statement getStatement() {
-        // String url = "jdbc:mysql://localhost:3306/toys_JavaWithDB";
-        // String user = "root";
-        // String password = "*khacademy!";
-        // 192.168.0.70
-        String url = "jdbc:mysql://192.168.0.94:8080:3306/db_cars";
+
+public java.sql.Statement getStatement(){
+        String url = "jdbc:mysql://192.168.0.94:3306/db_cars";
         String user = "yojulab";
         String password = "!yojulab*";
+
         Statement statement = null;
         try {
-            Connection connection = DriverManager.getConnection(url, user, password);
-            statement = connection.createStatement();
+            Connection connection = (Connection) DriverManager.getConnection(url, user, password);
+            statement =  (Statement) ((java.sql.Connection) connection).createStatement();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
-        return statement;
+        return (java.sql.Statement) statement;
     }
 
-    public String getGeneratorID() {
-        Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-M-yyyyhh:mm:ss");
+    public String getGeneratorID(){
+        Date date = new Date(0);  
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-M-yyyyhh:mm:ss");  
         String strDate = formatter.format(date);
         return strDate;
     }
+
+
+
 
 }

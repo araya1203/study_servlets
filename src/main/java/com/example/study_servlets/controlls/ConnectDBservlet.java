@@ -83,7 +83,7 @@
 //                     "</html>";
 
 //             // 클라이언트에 html 화면 제공
-        
+
 //             PrintWriter printWriter = response.getWriter();// response.getWriter();네크워크에 응답하고 작성할꺼야 실어보내는거야
 //             printWriter.println(contents);
 //             printWriter.close();
@@ -150,8 +150,6 @@
 //     }
 // }
 
-
-
 package com.example.study_servlets.controlls;
 
 import java.io.IOException;
@@ -160,6 +158,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -167,19 +167,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.example.study_servlets.controls.commons.Commons;
+import com.example.study_servlets.daos.FactorysDao;
+
 @WebServlet(urlPatterns = "/ConnectDBservlet")
 public class ConnectDBservlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp, HashMap fact, HashMap ryList) throws ServletException, IOException {
         try {
             // MySQL workbench 실행: JDBC
             // User/password와 접속 IP:port 접속
-            String url = "jdbc:mysql://192.168.0.94:3306/db_cars";
-            String user = "yojulab";
-            String password = "!yojulab*";
+            // String url = "jdbc:mysql://192.168.0.94:3306/db_cars";
+            // String user = "yojulab";
+            // String password = "!yojulab*";
 
-            Connection connection = DriverManager.getConnection(url, user, password);
-            System.out.println("DB연결 성공\n");
+            // Connection connection = DriverManager.getConnection(url, user, password);
+            // System.out.println("DB연결 성공\n");
 
             // 클라이언트 html 화면 제공
             String contents = "<!DOCTYPE html>\r\n" + //
@@ -213,14 +216,20 @@ public class ConnectDBservlet extends HttpServlet {
                     "            <tbody>\r\n";
 
             // - Query Edit
-            Statement statement = connection.createStatement();
-            String query = "SELECT * FROM factorys";
-            ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()) {
-                contents = contents + "                <tr>\r\n" + //
-                        "                    <td>" + resultSet.getString("COMPANY_ID") + "</td>\r\n" + //
-                        "                    <td>" + resultSet.getString("COMPANY") + "</td>\r\n" + //
-                        "                </tr>";
+            // Commons commons = new Commons();
+            // Statement statement = commons.getStatement();
+            // String query = "SELECT * FROM factorys";
+            // ResultSet resultSet = statement.executeQuery(query);
+            FactorysDao factorysDao = new FactorysDao();
+            ArrayList factoryList = new ArrayList();
+            factoryList = factorysDao.selectAll();
+            for(int i = 0; i < factoryList.size(); i++) {
+                HashMap hashMap = new HashMap();
+                hashMap = (HashMap) factoryList.get(i);
+                contents = contents + " <tr>\r\n" + //
+                        "                    <td>" + hashMap.get("COMPANY_ID") + "</td>\r\n" + //
+                        "                    <td>" + hashMap.get("COMPANY") + "</td>\r\n" + //
+                        "                </tr>\\r\\n";
             }
 
             contents = contents + "            </tbody>\r\n" + //
@@ -238,14 +247,14 @@ public class ConnectDBservlet extends HttpServlet {
             printwriter.println(contents);
             printwriter.close();
 
-            // SELECT COUNT(*) AS CNT FROM factorys;
-            query = "SELECT COUNT(*) AS CNT FROM factorys";
-            resultSet = statement.executeQuery(query);
-            int totalCount = 0;
-            while (resultSet.next()) {
-                System.out.println(resultSet.getInt("CNT"));
-                totalCount = resultSet.getInt("CNT");
-            }
+            // // SELECT COUNT(*) AS CNT FROM factorys;
+            // query = "SELECT COUNT(*) AS CNT FROM factorys";
+            // resultSet = statement.executeQuery(query);
+            // int totalCount = 0;
+            // while (resultSet.next()) {
+            //     System.out.println(resultSet.getInt("CNT"));
+            //     totalCount = resultSet.getInt("CNT");
+            // }
 
             System.out.println();
         } catch (Exception e) {
