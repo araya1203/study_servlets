@@ -1,5 +1,6 @@
 package com.example.study_servlets.controls;
 
+import com.daos.FactorysDao;
 import com.example.study_servlets.controls.commons.Commons;
 
 import java.io.IOException;
@@ -8,6 +9,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -64,11 +67,19 @@ public class ConnectDBServlet extends HttpServlet {
             Statement statement = commons.getStatement();
             ResultSet resultset = statement.executeQuery(query);
 
-            while (resultset.next()) {
+            FactorysDao factorysDao = new FactorysDao();
+            ArrayList factoryList = new ArrayList();
+            factoryList = factorysDao.selectALL();
+            for (int i = 0; i < factoryList.size(); i = i + 1) {
+                HashMap hashMap = (HashMap) factoryList.get(i);
                 contents = contents + "<tr>\r\n" + //
-                        "                    <td>" + resultset.getString("COMPANY_ID") + "</td>\r\n" + //
-                        "                    <td>" + resultset.getString("COMPANY") + "</td>\r\n" + //
+                        "                    <td>" + hashMap.get("COMPANY_ID") + "</td>\r\n" + //
+                        "                    <td>" + hashMap.get("COMPANY") + "</td>\r\n" + //
                         "                </tr>\r\n";
+            }
+
+            while (resultset.next()) {
+
                 contents = contents + "</tbody>\r\n" + //
                         "        </table>\r\n" + //
                         "    </div>\r\n" + //
