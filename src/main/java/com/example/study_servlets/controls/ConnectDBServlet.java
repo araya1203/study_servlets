@@ -32,7 +32,9 @@ public class ConnectDBServlet extends HttpServlet {
 
             Statement statement = connection.createStatement();
             ResultSet resultset = statement.executeQuery(query);
-            System.out.println(resultset);
+            while(resultset.next()){
+                System.out.println(resultset.getString("CAR_NAME") + resultset.getString("YEAR") + resultset.getString("CAR_INFOR_ID") + resultset.getString("COMPANY_ID"));
+            }
             
             Commons commons = new Commons();
             String query1 = "INSERT INTO car_infors(CAR_NAME, YEAR, CAR_INFOR_ID, COMPANY_ID)\n" + //
