@@ -37,8 +37,8 @@ public class ConnectDBServlet extends HttpServlet {
             }
             
             Commons commons = new Commons();
-            String query1 = "INSERT INTO car_infors(CAR_NAME, YEAR, CAR_INFOR_ID, COMPANY_ID)\n" + //
-                    "VALUES ('VOLVO', '2000', '"+commons.generateUUID()+"', 'C002');";
+            String query1 = "INSET INTO car_infors(CAR_NAME, YEAR, CAR_INFOR_ID, COMPANY_ID)\n" + //
+                    "VALUES ('VOLVRO', '2000', '"+commons.generateUUID()+"', 'C002');";
 
             Statement statement1 = connection.createStatement();
             int resultset1 = statement1.executeUpdate(query1);
