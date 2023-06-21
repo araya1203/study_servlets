@@ -22,9 +22,9 @@ public class ConnectDBServlet extends HttpServlet {
             throws ServletException, IOException {
         System.out.println("HelloWorldServlet -doGet()");
         try {
-            PrintWriter printWriter = response.getWriter();
+            
             // 상대 DB와 연결, mySQL 연결 후에 진행할 것!
-            String url = "jdbc:mysql://192.168.0.94:3306/db_cars";
+            String url = "jdbc:mysql://127.0.0.1:3306/db_cars";
             String user = "yojulab";
             String password = "!yojulab*";
             System.out.println("DB연결 성공\n");
@@ -76,6 +76,9 @@ public class ConnectDBServlet extends HttpServlet {
             }
 
             // 데이터가 날아가는 부분. 사실상 최종 작업.
+            
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter printWriter = response.getWriter();
             printWriter.println(contents);
             printWriter.close();
 
