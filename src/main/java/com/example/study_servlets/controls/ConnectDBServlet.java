@@ -54,12 +54,13 @@ public class ConnectDBServlet extends HttpServlet {
                     "            </thead>\r\n" + //
                     "            <tbody>\r\n";
 
-            String query = "";
+            String query = "SELECT COMPANY, COMPANY_ID\n" + //
+                    "FROM factorys";
             Connection connection = DriverManager.getConnection(url, user, password);
             Statement statement = connection.createStatement();
             ResultSet resultset = statement.executeQuery(query);
 
-            while (resultset.next()) {
+             while (resultset.next()) {
                 contents = contents + "<tr>\r\n" + //
                         "                    <td>" + resultset.getString("COMPANY_ID") + "</td>\r\n" + //
                         "                    <td>" + resultset.getString("COMPANY") + "</td>\r\n" + //
