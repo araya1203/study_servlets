@@ -22,12 +22,8 @@ public class ConnectDBServlet extends HttpServlet {
             throws ServletException, IOException {
         System.out.println("HelloWorldServlet -doGet()");
         try {
-            
+
             // 상대 DB와 연결, mySQL 연결 후에 진행할 것!
-            String url = "jdbc:mysql://192.168.0.94:3306/db_cars";
-            String user = "yojulab";
-            String password = "!yojulab*";
-            System.out.println("DB연결 성공\n");
 
             // 클라이언트에 HTML 화면 제공
             // 화면 나오지 않음. 다음에 재시도
@@ -56,11 +52,12 @@ public class ConnectDBServlet extends HttpServlet {
 
             String query = "SELECT COMPANY, COMPANY_ID\n" + //
                     "FROM factorys";
-            Connection connection = DriverManager.getConnection(url, user, password);
-            Statement statement = connection.createStatement();
+
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
             ResultSet resultset = statement.executeQuery(query);
 
-             while (resultset.next()) {
+            while (resultset.next()) {
                 contents = contents + "<tr>\r\n" + //
                         "                    <td>" + resultset.getString("COMPANY_ID") + "</td>\r\n" + //
                         "                    <td>" + resultset.getString("COMPANY") + "</td>\r\n" + //
@@ -77,7 +74,7 @@ public class ConnectDBServlet extends HttpServlet {
             }
 
             // 데이터가 날아가는 부분. 사실상 최종 작업.
-            
+
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter printWriter = response.getWriter();
             printWriter.println(contents);
@@ -111,7 +108,7 @@ public class ConnectDBServlet extends HttpServlet {
             // TODO: handle exception
             System.out.println(e.getMessage());
         }
-        
+
         System.out.println("HellowWorldServlet -doGet() done.");
     }
 
