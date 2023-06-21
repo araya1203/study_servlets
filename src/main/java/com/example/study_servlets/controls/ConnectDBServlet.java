@@ -41,6 +41,9 @@ public class ConnectDBServlet extends HttpServlet {
             Statement statement1 = connection.createStatement();
             int resultset1 = statement1.executeUpdate(query1);
             System.out.println();
+            
+            statement.close();
+            statement1.close();
 
         } catch (Exception e) {
             // TODO: handle exception
