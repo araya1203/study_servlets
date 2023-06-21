@@ -18,8 +18,8 @@ public class Commons {
         // String url = "jdbc:mysql://localhost:3306/toys_JavaWithDB";
         // String user = "root";
         // String password = "*khacademy!";
-        
-        String url = "jdbc:mysql://192.168.0.94:3306/db_cars";
+        // 192.168.0.70
+        String url = "jdbc:mysql://192.168.0.94:8080:3306/db_cars";
         String user = "yojulab";
         String password = "!yojulab*";
         Statement statement = null;

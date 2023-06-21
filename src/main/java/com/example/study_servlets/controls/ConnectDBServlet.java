@@ -34,16 +34,23 @@ public class ConnectDBServlet extends HttpServlet {
                     "    <meta charset=\"UTF-8\">\r\n" + //
                     "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n" + //
                     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n" + //
-                    "    <title>bootstrap_tables</title>\r\n" + //
-                    "    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css\">\r\n"
+                    "    <title>bootstrap template</title>\r\n" + //
+                    "    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css\">\r\n"
                     + //
+                    "    <!-- <link rel=\"stylesheet\" href=\"../css/commons.css\"> -->\r\n" + //
                     "</head>\r\n" + //
                     "\r\n" + //
                     "<body>\r\n" + //
-                    "    <div class=\"container\">\r\n" + //
-                    "        <table class=\"table table-bordered table-hover\">\r\n" + //
+                    "    <div class=\"container mt-3\">\r\n" + //
+                    "        <!--table-striped:\uC9DD\uC218\uC5F4\uBD80\uD130 \uC0C9\uC774 \uCE60\uD574\uC9D0.-->\r\n" + //
+                    "        <!--table-borderd:\uD14C\uC774\uBE14 \uD14C\uB450\uB9AC <-> table-borderless-->\r\n" + //
+                    "        <!--table-hover: \uC5F4\uC774 \uC120\uD0DD\uB418\uB294 \uAC83 \uAC19\uC774-->\r\n" + //
+                    "        <table class=\"table table-striped table-bordered table-hover\">\r\n" + //
+                    "            <!--thead: \uB370\uCF54\uB97C \uC548\uD574\uB3C4 \uAE30\uBCF8 \uC591\uC2DD\uC774 \uB4E4\uC5B4\uAC00 \uC788\uB2E4.-->\r\n"
+                    + //
                     "            <thead>\r\n" + //
                     "                <tr>\r\n" + //
+                    "                    <!--th: table head-->\r\n" + //
                     "                    <th>COMPANY_ID</th>\r\n" + //
                     "                    <th>COMPANY</th>\r\n" + //
                     "                </tr>\r\n" + //
