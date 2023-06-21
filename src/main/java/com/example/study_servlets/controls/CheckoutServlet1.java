@@ -24,8 +24,10 @@ public class CheckoutServlet1 extends HttpServlet {
             // String state = request.getParameter("State");
             String zip = request.getParameter("zip");
             
-            PrintWriter printwriter = response.getWriter();
+            
 
+            PrintWriter printwriter = response.getWriter();
+            
             String contents = "<!DOCTYPE html>\r\n" + //
                     "<html lang=\"en\">\r\n" + //
                     "\r\n" + //
