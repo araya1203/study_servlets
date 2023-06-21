@@ -24,7 +24,7 @@ public class ConnectDBServlet extends HttpServlet {
         try {
             
             // 상대 DB와 연결, mySQL 연결 후에 진행할 것!
-            String url = "jdbc:mysql://127.0.0.1:3306/db_cars";
+            String url = "jdbc:mysql://192.168.0.94:3306/db_cars";
             String user = "yojulab";
             String password = "!yojulab*";
             System.out.println("DB연결 성공\n");
