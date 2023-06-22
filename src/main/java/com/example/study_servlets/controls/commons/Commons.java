@@ -4,10 +4,8 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-
-import org.springframework.boot.autoconfigure.amqp.RabbitProperties.Cache.Connection;
-
-import com.mysql.cj.xdevapi.Statement;
+import java.sql.Statement;
+import java.sql.Connection;
 
 //import java.util.UUID;
 
@@ -17,7 +15,7 @@ public class Commons {
     // }   
 
 
-public java.sql.Statement getStatement(){
+public Statement getStatement(){
         String url = "jdbc:mysql://192.168.0.94:3306/db_cars";
         String user = "yojulab";
         String password = "!yojulab*";
@@ -25,11 +23,11 @@ public java.sql.Statement getStatement(){
         Statement statement = null;
         try {
             Connection connection = (Connection) DriverManager.getConnection(url, user, password);
-            statement =  (Statement) ((java.sql.Connection) connection).createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
+            statement = connection.createStatement();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        return (java.sql.Statement) statement;
+        return statement;
     }
 
     public String getGeneratorID(){
