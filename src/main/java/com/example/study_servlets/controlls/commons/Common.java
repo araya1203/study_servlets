@@ -16,8 +16,8 @@ public class Common {
 
 
 public Statement getStatement(){
-        String url = "jdbc:mysql://127.0.0.1:3306/db_cars";
-        String user = "root";
+        String url = "jdbc:mysql://192.168.0.94:3306/db_cars";
+        String user = "yojulab";
         String password = "!yojulab*";
 
         Statement statement = null;
