@@ -8,17 +8,49 @@ import java.util.HashMap;
 import com.example.study_servlets.controls.commons.Commons;
 
 public class OptionInforsDao {
+
+    public int InsertWithUniqueID(String insert_id) {
+        int count = 0;
+        try {
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+             
+            String query = "INSERT INTO option_infors(OPTION_INFOR_ID, OPTION_NAME)\n" + //
+                    "VALUES('', '');";
+            
+            count = statement.executeUpdate(query);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return count;
+    }
+
+    public int DeleteWithUniqueID(String unique_id) {
+        int count = 0;
+        try {
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+            String query = "DELETE FROM option_infors\n" + //
+                    "WHERE OPTION_INFOR_ID = '" + unique_id + "';";
+            count = statement.executeUpdate(query);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return count;
+    }
+
     public ArrayList SelectwithSearch(String search) {
         ArrayList optionInforList = new ArrayList<>();
         try {
-            if(search == null){
+            if (search == null) {
                 search = "";
             }
             Commons commons = new Commons();
             Statement statement = commons.getStatement();
             String query = "SELECT *\n" + //
                     "FROM option_infors\n" + //
-                    "WHERE OPTION_NAME like '"+search+"%';";
+                    "WHERE OPTION_NAME like '" + search + "%';";
             ResultSet resultSet = statement.executeQuery(query);
 
             HashMap optionInforRecord = new HashMap<>();
