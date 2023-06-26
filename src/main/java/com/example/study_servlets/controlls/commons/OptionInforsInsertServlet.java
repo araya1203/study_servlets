@@ -1,4 +1,4 @@
-package com.example.study_servlets.controlls;
+package com.example.study_servlets.controlls.commons;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,23 +11,28 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.example.study_servlets.daos.OptionInforsDao;
 
-@WebServlet(urlPatterns = "/optionInforsDeleteServlet")
-public class OptionInforsDeleteServlet extends HttpServlet{
+@WebServlet(urlPatterns = "/optionInforsInsertServlet")
+public class OptionInforsInsertServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String unique_id = request.getParameter("unique_id");
-
+            String name = request.getParameter("name");
+            
+            // Generate UUID
+            String unique_id = java.util.UUID.randomUUID().toString();
+            
             OptionInforsDao optionInforsDao = new OptionInforsDao();
-            int count = optionInforsDao.DeleteWithUniqueID(unique_id);
+            optionInforsDao.InsertWithUniqueId(name, unique_id);
 
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter printWriter = response.getWriter();
-            String contents = "Delete count : "+count;
+            String contents = "Insert successful";
             printWriter.println(contents);
-            printWriter.close();            
+            printWriter.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 }
+    
+
