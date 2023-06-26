@@ -55,4 +55,8 @@ public class OptionInforsDao {
     public int UpdateWithName(String unique_id, String name) {
         return 0;
     }
+
+    public int InsertWithUniqueID(String name) {
+        return 0;
+    }
 }
