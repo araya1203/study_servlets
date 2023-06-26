@@ -59,7 +59,7 @@ public class OptionInforsServlet extends HttpServlet {
 
             // Search 부분 넘기기
 
-            optionInforList = optionInforsDao.SelectwithSearch(search);
+            optionInforList = optionInforsDao.SelectWithSearch(search);
 
             // for loop가 돌면서 HashMap에 ArrayList의 항목들이 하나씩 들어감
             for (int i = 0; i < optionInforList.size(); i = i + 1) {
