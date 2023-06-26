@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.example.study_servlets.controlls.commons.Common;
-import com.example.study_servlets.controls.commons.Commons;
+
 
 public class CarInforDao {
     public ArrayList selectAll() {

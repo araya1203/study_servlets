@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import com.example.study_servlets.controlls.commons.Common;
 
+<<<<<<< HEAD
 public class OptionInforsDao {
     public int DeleteWithUniqueID(String unique_id){
         int count = 0;
@@ -21,6 +22,8 @@ public class OptionInforsDao {
         }
         return count;
     }
+=======
+>>>>>>> 78985e92dbfa2aca2368c566912e273cf43d6426
 
     public ArrayList SelectWithSearch(String search) {
         ArrayList optionInforList = new ArrayList<>();
@@ -28,7 +31,11 @@ public class OptionInforsDao {
             if(search == null){
                 search = "";
             }
+<<<<<<< HEAD
             Common common = new Common();
+=======
+              Common common = new Common();
+>>>>>>> 78985e92dbfa2aca2368c566912e273cf43d6426
             Statement statement = common.getStatement(); // Editor in Workbanch
             String query = "SELECT *\n" + //
                     "FROM option_infors\n" + //

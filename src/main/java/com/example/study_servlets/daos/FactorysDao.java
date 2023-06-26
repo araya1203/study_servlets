@@ -5,13 +5,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.example.study_servlets.controls.commons.Commons;
+
+import com.example.study_servlets.controlls.commons.Common;
 
 public class FactorysDao {
     public ArrayList selectAll() {
         ArrayList arrayList = new ArrayList();
         try {
-            Commons commons = new Commons();
+            Common commons = new Common();
             Statement statement = commons.getStatement();
             String query = "SELECT * FROM factorys";
             ResultSet resultSet = statement.executeQuery(query);

@@ -24,6 +24,13 @@ public class HelloWorldJSPServlet extends HttpServlet {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/helloWorldJSP.jsp");
             requestDispatcher.forward(request, response);
             
+            request.setAttribute("contents", "contents");
+            // path변경해야 함
+            // setParam과 getParam 활용?
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/helloworldJSP.jsp");
+            requestDispatcher.forward(request, response);
+
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

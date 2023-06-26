@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.example.study_servlets.controlls.commons.Common;
-import com.example.study_servlets.controls.commons.Commons;
 import com.example.study_servlets.daos.CarInforDao;
 import com.example.study_servlets.daos.FactorysDao;
 
