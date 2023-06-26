@@ -16,7 +16,7 @@ public class HelloWorldServlet extends HttpServlet {
             throws ServletException, IOException {
         System.out.println("HelloWorldServlet -doGet()");
         try {
-
+response.setContentType("text/html;charset=UTF-8");
             String firstName = "Ara ";
             String secondName = "ya";
 
