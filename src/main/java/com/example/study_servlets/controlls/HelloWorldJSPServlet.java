@@ -16,18 +16,15 @@ public class HelloWorldJSPServlet extends HttpServlet {
     throws ServletException, IOException {
         
         try {
-            String contents = "Yoju Lab !";
-
-            request.setAttribute("contents", contents); 
+            //String contents = "Yoju Lab !";
+            String contents = request.getParameter("company"); 
             // 다음 파일 호출
         
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/helloWorldJSP.jsp");
-            requestDispatcher.forward(request, response);
-            
+          
             request.setAttribute("contents", "contents");
             // path변경해야 함
             // setParam과 getParam 활용?
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/helloworldJSP.jsp");
+            RequestDispatcher  requestDispatcher = request.getRequestDispatcher("/helloworldJSP.jsp");
             requestDispatcher.forward(request, response);
 
 

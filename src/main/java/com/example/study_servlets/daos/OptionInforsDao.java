@@ -5,15 +5,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.example.study_servlets.controlls.commons.Common;
+import com.example.study_servlets.controlls.commons.Commons;
 
-<<<<<<< HEAD
 public class OptionInforsDao {
     public int DeleteWithUniqueID(String unique_id){
         int count = 0;
         try {
-            Common common = new Common();
-            Statement statement = common.getStatement(); // Editor in Workbanch
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement(); // Editor in Workbanch
             String query = "delete from option_infors\n" + //
                     "where OPTION_INFOR_ID = '"+unique_id+"';";
             count = statement.executeUpdate(query);
@@ -22,8 +21,6 @@ public class OptionInforsDao {
         }
         return count;
     }
-=======
->>>>>>> 78985e92dbfa2aca2368c566912e273cf43d6426
 
     public ArrayList SelectWithSearch(String search) {
         ArrayList optionInforList = new ArrayList<>();
@@ -31,12 +28,8 @@ public class OptionInforsDao {
             if(search == null){
                 search = "";
             }
-<<<<<<< HEAD
-            Common common = new Common();
-=======
-              Common common = new Common();
->>>>>>> 78985e92dbfa2aca2368c566912e273cf43d6426
-            Statement statement = common.getStatement(); // Editor in Workbanch
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement(); // Editor in Workbanch
             String query = "SELECT *\n" + //
                     "FROM option_infors\n" + //
                     "WHERE OPTION_NAME like '"+search+"%' ;";
@@ -54,9 +47,5 @@ public class OptionInforsDao {
             System.out.println(e.getMessage());
         }
         return optionInforList;
-    }
-
-    public int UpdateWithName(String unique_id, String name) {
-        return 0;
     }
 }

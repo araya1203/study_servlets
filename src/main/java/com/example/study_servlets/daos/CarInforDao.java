@@ -6,14 +6,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.example.study_servlets.controlls.commons.Common;
+import com.example.study_servlets.controlls.commons.Commons;
 
 
 public class CarInforDao {
     public ArrayList selectAll() {
         ArrayList arrayList = new ArrayList();
         try {
-            Common common = new Common();
+            Commons common = new Commons();
             Statement statement = common.getStatement();
             String query = "SELECT * FROM car_infors";
             ResultSet resultSet = statement.executeQuery(query);
