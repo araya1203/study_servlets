@@ -7,29 +7,35 @@ import java.util.HashMap;
 
 import com.example.study_servlets.controlls.commons.Common;
 
-
-    public int DeleteWithUniqueID(String unique_id) {
+<<<<<<< HEAD
+public class OptionInforsDao {
+    public int DeleteWithUniqueID(String unique_id){
         int count = 0;
         try {
-            Commons commons = new Commons();
-            Statement statement = commons.getStatement();
-            String query = "DELETE FROM option_infors\n" + //
-                    "WHERE OPTION_INFOR_ID = '" + unique_id + "';";
+            Common common = new Common();
+            Statement statement = common.getStatement(); // Editor in Workbanch
+            String query = "delete from option_infors\n" + //
+                    "where OPTION_INFOR_ID = '"+unique_id+"';";
             count = statement.executeUpdate(query);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return count;
     }
+=======
+>>>>>>> 78985e92dbfa2aca2368c566912e273cf43d6426
 
-    public ArrayList SelectwithSearch(String search) {
+    public ArrayList SelectWithSearch(String search) {
         ArrayList optionInforList = new ArrayList<>();
         try {
-            if (search == null) {
+            if(search == null){
                 search = "";
             }
+<<<<<<< HEAD
+            Common common = new Common();
+=======
               Common common = new Common();
+>>>>>>> 78985e92dbfa2aca2368c566912e273cf43d6426
             Statement statement = common.getStatement(); // Editor in Workbanch
             String query = "SELECT *\n" + //
                     "FROM option_infors\n" + //
@@ -37,10 +43,7 @@ import com.example.study_servlets.controlls.commons.Common;
             ResultSet resultSet = statement.executeQuery(query);
 
             HashMap optionInforRecord = new HashMap<>();
-
             while (resultSet.next()) {
-
-                // HashMap의 Key와 Value 입력
                 optionInforRecord = new HashMap<>();
                 optionInforRecord.put("OPTION_INFOR_ID", resultSet.getString("OPTION_INFOR_ID"));
                 optionInforRecord.put("OPTION_NAME", resultSet.getString("OPTION_NAME"));
@@ -53,14 +56,7 @@ import com.example.study_servlets.controlls.commons.Common;
         return optionInforList;
     }
 
-    public void InsertWithUniqueId(String name, String unique_id) {
-    }
-
     public int UpdateWithName(String unique_id, String name) {
-        return 0;
-    }
-
-    public int InsertWithUniqueID(String name) {
         return 0;
     }
 }

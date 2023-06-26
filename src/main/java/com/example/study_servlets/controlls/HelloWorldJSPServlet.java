@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/helloWorldJSPServlet")
 public class HelloWorldJSPServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+    throws ServletException, IOException {
         
         try {
             

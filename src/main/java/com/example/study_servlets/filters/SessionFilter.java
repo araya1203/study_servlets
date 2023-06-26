@@ -7,7 +7,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
+//import javax.servlet.annotation.WebFilter;
 
 
 // @WebFilter(urlPatterns = "/*")
@@ -17,6 +17,8 @@ public class SessionFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         try {
+            String contents = "Yoju Lab !";
+
             System.out.println(request.getRemoteHost());
             System.out.println(request.getRemoteAddr());
 
