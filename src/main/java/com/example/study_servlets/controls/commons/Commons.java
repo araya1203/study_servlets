@@ -7,12 +7,13 @@ import java.text.SimpleDateFormat;
 import java.sql.Statement;
 import java.sql.Connection;
 
-//import java.util.UUID;
+import java.util.UUID;
 
 public class Commons {
-    // public String generateUUID() {
-    //     return UUID.randomUUID().toString();
-    // }   
+    
+    public String generateUUID() {
+        return UUID.randomUUID().toString();
+    }   
 
 
 public Statement getStatement(){
