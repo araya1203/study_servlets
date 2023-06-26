@@ -58,4 +58,8 @@ import com.example.study_servlets.controls.commons.Commons;
     public int UpdateWithName(String unique_id, String name) {
         return 0;
     }
+
+    public int InsertWithUniqueID(String name) {
+        return 0;
+    }
 }
