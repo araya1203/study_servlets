@@ -5,7 +5,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.example.study_servlets.controls.commons.Commons;
+import com.example.study_servlets.controlls.commons.Common;
+
 
     public int DeleteWithUniqueID(String unique_id) {
         int count = 0;
