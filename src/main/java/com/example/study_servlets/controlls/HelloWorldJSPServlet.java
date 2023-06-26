@@ -1,4 +1,4 @@
-package com.example.study_servlets;
+package com.example.study_servlets.controlls;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/helloWorldServlet")
-public class HelloWorldServlet extends HttpServlet {
+public class HelloWorldJSPServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("HelloWorldServlet - doGet()");
         try {
