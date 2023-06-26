@@ -3,7 +3,6 @@ package com.example.study_servlets.controlls;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,20 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/helloWorldServlet")
 public class HelloWorldJSPServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        System.out.println("HelloWorldServlet - doGet()");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
         try {
-            response.setContentType("text/html;charset=UTF-8");
-
             String contents = "Yoju Lab !";
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/helloWorldJSP.jsp");
-            requestDispatcher.forward(request, response);
             
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("HelloWorldServlet - doGet() done.");
+       
 
     }
 }
