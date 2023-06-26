@@ -51,29 +51,29 @@ public class CheckoutServlet1 extends HttpServlet {
                     "            <div class=\"row col-12 m-2 \">\r\n" + //
                     "                <div class=\"col-6 sm-6\">\r\n" + //
                     "                    <label for=\"First_name\" class=\"form-label\">First Name: </label>\r\n" + //
-                    "                    <input type=\"text\" name=\"first_name\" id=\"firstname\" value="+firstname+">\r\n" + //
+                    "                    <input type=\"text\" name=\"first_name\" id=\"firstname\" value='"+firstname+"'>\r\n" + //
                     "                </div>\r\n" + //
                     "                <div class=\"col-6 sm-6\">\r\n" + //
                     "                    <label for=\"Last_name\" class=\"form-label\">Last Name: </label>\r\n" + //
-                    "                    <input type=\"text\" name=\"last_name\" id=\"lastname\" value="+lastname+">\r\n" + //
+                    "                    <input type=\"text\" name=\"last_name\" id=\"lastname\" value='"+lastname+"'>\r\n" + //
                     "                </div>\r\n" + //
                     "            </div>\r\n" + //
                     "\r\n" + //
                     "            <div class=\"row m-1 mb-4\">\r\n" + //
                     "                Username\r\n" + //
-                    "                <input type=\"text\" name=\"Username\" id=\"username\" value="+username+">\r\n" + //
+                    "                <input type=\"text\" name=\"Username\" id=\"username\" value='"+username+"'>\r\n" + //
                     "            </div>\r\n" + //
                     "            <div class=\"row m-1 mb-4\">\r\n" + //
                     "                Email(Optional)\r\n" + //
-                    "                <input type=\"email\" name=\"Email\" id=\"email\" value="+email+">\r\n" + //
+                    "                <input type=\"email\" name=\"Email\" id=\"email\" value='"+email+"'>\r\n" + //
                     "            </div>\r\n" + //
                     "            <div class=\"row m-1 mb-4\">\r\n" + //
                     "                Address\r\n" + //
-                    "                <input type=\"text\" name=\"Address\" id=\"address\" value="+address+">\r\n" + //
+                    "                <input type=\"text\" name=\"Address\" id=\"address\" value='"+address+"'>\r\n" + //
                     "            </div>\r\n" + //
                     "            <div class=\"row m-1 mb-4\">\r\n" + //
                     "                Address 2(Optional)\r\n" + //
-                    "                <input type=\"text\" name=\"Address_Opt\" id=\"address_opt\" value="+addressOpt+">\r\n" + //
+                    "                <input type=\"text\" name=\"Address_Opt\" id=\"address_opt\" value='"+addressOpt+"'>\r\n" + //
                     "            </div>\r\n" + //
                     "            <div>\r\n" + //
                     "                <div class=\"row col-12\">\r\n" + //
@@ -96,7 +96,7 @@ public class CheckoutServlet1 extends HttpServlet {
                     "                        </select>\r\n" + //
                     "                    </div>\r\n" + //
                     "                    <div class=\"row col-3\"> Zip\r\n" + //
-                    "                        <input type=\"text\" name=\"zip\" id=\"zip\" value="+zip+">\r\n" + //
+                    "                        <input type=\"text\" name=\"zip\" id=\"zip\" value='"+zip+"'>\r\n" + //
                     "                    </div>\r\n" + //
                     "                </div>\r\n" + //
                     "                <div class=>\r\n" + //

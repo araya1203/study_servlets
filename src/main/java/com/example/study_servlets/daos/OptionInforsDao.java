@@ -5,9 +5,21 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.example.study_servlets.controlls.commons.Common;
+import com.example.study_servlets.controls.commons.Commons;
 
 public class OptionInforsDao {
+<<<<<<< HEAD
+
+    public int InsertWithUniqueID(String insert_id) {
+        int count = 0;
+        try {
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+             
+            String query = "INSERT INTO option_infors(OPTION_INFOR_ID, OPTION_NAME)\n" + //
+                    "VALUES('', '');";
+            
+=======
     public int DeleteWithUniqueID(String unique_id){
         int count = 0;
         try {
@@ -15,6 +27,7 @@ public class OptionInforsDao {
             Statement statement = common.getStatement(); // Editor in Workbanch
             String query = "delete from option_infors\n" + //
                     "where OPTION_INFOR_ID = '"+unique_id+"';";
+>>>>>>> 87fd553856e98101bc2f6863497d98db5a30faff
             count = statement.executeUpdate(query);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -22,24 +35,58 @@ public class OptionInforsDao {
         return count;
     }
 
-    public ArrayList SelectWithSearch(String search) {
+    public int DeleteWithUniqueID(String unique_id) {
+        int count = 0;
+        try {
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+            String query = "DELETE FROM option_infors\n" + //
+                    "WHERE OPTION_INFOR_ID = '" + unique_id + "';";
+            count = statement.executeUpdate(query);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return count;
+    }
+
+    public ArrayList SelectwithSearch(String search) {
         ArrayList optionInforList = new ArrayList<>();
         try {
-            if(search == null){
+            if (search == null) {
                 search = "";
             }
+<<<<<<< HEAD
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+            String query = "SELECT *\n" + //
+                    "FROM option_infors\n" + //
+                    "WHERE OPTION_NAME like '" + search + "%';";
+=======
               Common common = new Common();
             Statement statement = common.getStatement(); // Editor in Workbanch
             String query = "SELECT *\n" + //
                     "FROM option_infors\n" + //
                     "WHERE OPTION_NAME like '"+search+"%' ;";
+>>>>>>> 87fd553856e98101bc2f6863497d98db5a30faff
             ResultSet resultSet = statement.executeQuery(query);
 
             HashMap optionInforRecord = new HashMap<>();
+
             while (resultSet.next()) {
+
+                // HashMap의 Key와 Value 입력
                 optionInforRecord = new HashMap<>();
                 optionInforRecord.put("OPTION_INFOR_ID", resultSet.getString("OPTION_INFOR_ID"));
                 optionInforRecord.put("OPTION_NAME", resultSet.getString("OPTION_NAME"));
+<<<<<<< HEAD
+
+                // ArrayList에 HashMap을 Row로 각각 입력
+                optionInforList.add(optionInforRecord);
+
+            }
+=======
+>>>>>>> 87fd553856e98101bc2f6863497d98db5a30faff
 
                 optionInforList.add(optionInforRecord);
             }
