@@ -5,7 +5,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.example.study_servlets.controlls.commons.Common;
+import com.example.study_servlets.controlls.commons.Commons;
 
 public class FactorysDao {
     public ArrayList selectALL() {
@@ -13,7 +13,7 @@ public class FactorysDao {
         try {
             String query = "SELECT COMPANY, COMPANY_ID\n" + //
                 "FROM factorys";
-        Common commons = new Common();
+        Commons commons = new Commons();
         Statement statement = commons.getStatement();
         ResultSet resultset = statement.executeQuery(query);
        
