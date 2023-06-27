@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-import com.example.study_servlets.controlls.commons.Common;
+import com.example.study_servlets.controlls.commons.Commons;
 
 public class FactorysDao {
     public ArrayList selectAll() {
         ArrayList arrayList = new ArrayList();
         try {
-            Common commons = new Common();
+            Commons commons = new Commons();
             Statement statement = commons.getStatement();
             String query = "SELECT * FROM factorys";
             ResultSet resultSet = statement.executeQuery(query);

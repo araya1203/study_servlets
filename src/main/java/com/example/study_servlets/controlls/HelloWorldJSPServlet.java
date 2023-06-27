@@ -23,7 +23,7 @@ public class HelloWorldJSPServlet extends HttpServlet {
             request.setAttribute("contents", contents);
             // path변경해야 함
             // setParam과 getParam 활용?
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/helloworldJSP.jsp");
+            RequestDispatcher  requestDispatcher = request.getRequestDispatcher("/helloworldJSP.jsp");
             requestDispatcher.forward(request, response);
 
 

@@ -1,4 +1,4 @@
-package com.example.study_servlets;
+package com.example.study_servlets.controlls;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,26 +16,21 @@ public class SessionDeleteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         try {
-            // expited session
+            // expired session
             HttpSession httpSession = request.getSession();
-            httpSession.invalidate();
-            
-           
+            httpSession.invalidate();   // Server side
+
             // delete cookies
             Cookie[] cookies = request.getCookies();
-            String content = "<div>CookiesGetAndDeleteServlet</div>";
             for (Cookie cookie : cookies) {
                 String name = cookie.getName();
                 String value = cookie.getValue();
-                if (name.equals("secondName")) { // 쿠키 삭제
+                if (name.equals("JSESSIONID")) { // 쿠키 삭제 - Client side
                     cookie.setMaxAge(0);
                     response.addCookie(cookie);
-                } else { // 출력
-                    content = content + "<div>" + name + ", " + value + "</div>";
                 }
-            }
+            }            
 
             PrintWriter printWriter = response.getWriter();
             String contents = "<div>Logout !</div>";
@@ -43,10 +38,6 @@ public class SessionDeleteServlet extends HttpServlet {
             printWriter.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
-
-            {
-
-            }
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.study_servlets.controlls.commons;
+package com.example.study_servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,28 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.example.study_servlets.daos.OptionInforsDao;
-
-@WebServlet(urlPatterns = "/optionInforsUpdateServlet")
-public class OptionInforsUpdateServlet extends HttpServlet {
-    @Override
+@WebServlet(urlPatterns = "/helloWorldServlet")
+public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("HelloWorldServlet - doGet()");
         try {
-            String unique_id = request.getParameter("unique_id");
-            String name = request.getParameter("name");
-
-            OptionInforsDao optionInforsDao = new OptionInforsDao();
-            int count = ((Object) optionInforsDao).UpdateWithName(unique_id, name);
-
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter printWriter = response.getWriter();
-            String contents = "Update count: " + count;
+            String contents = "Yoju Lab !";
             printWriter.println(contents);
             printWriter.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        System.out.println("HelloWorldServlet - doGet() done.");
+
     }
 }
-
-

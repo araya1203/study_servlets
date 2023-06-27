@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.UUID;
 
 
-public class Common {
+public class Commons {
     // public String generateUUID() {
     //     return UUID.randomUUID().toString();
     // }   
