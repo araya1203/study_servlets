@@ -53,7 +53,5 @@ public class OptionInforsDao {
         return 0;
     }
 
-    public int DeleteWithUniqueID(String unique_id) {
-        return 0;
-    }
+
 }
