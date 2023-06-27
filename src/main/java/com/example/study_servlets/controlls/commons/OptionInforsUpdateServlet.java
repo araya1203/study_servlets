@@ -20,7 +20,7 @@ public class OptionInforsUpdateServlet extends HttpServlet {
             String name = request.getParameter("name");
 
             OptionInforsDao optionInforsDao = new OptionInforsDao();
-            int count = ((Object) optionInforsDao).UpdateWithName(unique_id, name);
+            int count = ((OptionInforsDao) optionInforsDao).UpdateWithName(unique_id, name);
 
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter printWriter = response.getWriter();
