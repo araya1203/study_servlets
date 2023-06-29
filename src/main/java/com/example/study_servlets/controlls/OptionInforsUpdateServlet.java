@@ -1,4 +1,4 @@
-package com.example.study_servlets.controlls.commons;
+package com.example.study_servlets.controlls;
 
 import java.io.IOException;
 import java.io.PrintWriter;

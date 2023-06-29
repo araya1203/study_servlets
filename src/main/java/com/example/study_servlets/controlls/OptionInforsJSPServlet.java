@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.example.study_servlets.daos.OptionInforsDao;
 
-@WebServlet(urlPatterns = "/optionInforsJPSServlet")
-public class OptionInforsJPSServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/optionInforsJSPServlet")
+public class OptionInforsJSPServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -31,13 +31,12 @@ public class OptionInforsJPSServlet extends HttpServlet {
             request.setAttribute("search", search);
             request.setAttribute("optionInforList", optionInforList);
 
-            // 다음 호출 파일 
-            RequestDispatcher  requestDispatcher = request.getRequestDispatcher("/cars/option_infors.jsp");
-            requestDispatcher.forward(request, response);
-
-        
             // getWriter 전에 charset 하기
             response.setContentType("text/html;charset=UTF-8");
+
+            // 다음 파일 호출
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/cars/option_infors.jsp");
+            requestDispatcher.forward(request, response);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

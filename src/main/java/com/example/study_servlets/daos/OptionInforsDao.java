@@ -13,8 +13,8 @@ public class OptionInforsDao {
         try {
             Commons commons = new Commons();
             Statement statement = commons.getStatement(); // Editor in Workbanch
-            String query = "delete from option_infors\n" + //
-                    "where OPTION_INFOR_ID = '"+unique_id+"';";
+            String query = "delete from user\n" + //
+                    "where user_ID = '"+unique_id+"';";
             count = statement.executeUpdate(query);
         } catch (Exception e) {
             System.out.println(e.getMessage());
