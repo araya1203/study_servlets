@@ -25,14 +25,14 @@ public class OptionInforsDao {
     public ArrayList SelectWithSearch(String search) {
         ArrayList optionInforList = new ArrayList<>();
         try {
-            if(search == null){
+            if (search == null) {
                 search = "";
             }
             Commons commons = new Commons();
             Statement statement = commons.getStatement(); // Editor in Workbanch
             String query = "SELECT *\n" + //
                     "FROM option_infors\n" + //
-                    "WHERE OPTION_NAME like '"+search+"%' ;";
+                    "WHERE OPTION_NAME like '" + search + "%' ;";
             ResultSet resultSet = statement.executeQuery(query);
 
             HashMap optionInforRecord = new HashMap<>();
@@ -48,4 +48,10 @@ public class OptionInforsDao {
         }
         return optionInforList;
     }
+
+    public int UpdateWithName(String unique_id, String name) {
+        return 0;
+    }
+
+
 }
